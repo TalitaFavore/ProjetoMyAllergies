@@ -52,3 +52,15 @@ insert into ingredient (nameIngredient) values('Amendoim');
 insert into ingredient (nameIngredient) values('Farinha de Trigo');
 
 select * from ingredient;
+
+--
+create table sensitivity (
+	id serial primary key,
+	nameSensitivity varchar(30)
+);
+
+insert into sensitivity (nameSensitivity) values('Camarão');
+insert into sensitivity (nameSensitivity) values('Látex');
+insert into sensitivity (nameSensitivity) values('Pistache');
+
+select * from sensitivity;

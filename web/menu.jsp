@@ -6,6 +6,7 @@
     <a href="${pageContext.request.contextPath}/IntensityListar">Intensidades</a>
     <a href="${pageContext.request.contextPath}/ProductListar">Produtos</a>
     <a href="${pageContext.request.contextPath}/IngredientListar">Ingredientes</a>
+    <a href="${pageContext.request.contextPath}/SensitivityListar">Sensibilidades</a>
 
     <hr>    
 </center>
