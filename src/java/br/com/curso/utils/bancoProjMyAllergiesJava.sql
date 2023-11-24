@@ -40,3 +40,15 @@ create table product(
 insert into product(barcode, brand, nameProduct) values(111111111111, 'SevenBoys', 'Pão de Leite');
 
 select * from product;
+
+--
+create table ingredient (
+	id serial primary key,
+	nameIngredient varchar(30)
+);
+
+insert into ingredient (nameIngredient) values('Leite');
+insert into ingredient (nameIngredient) values('Amendoim');
+insert into ingredient (nameIngredient) values('Farinha de Trigo');
+
+select * from ingredient;

@@ -5,6 +5,7 @@
     <a href="${pageContext.request.contextPath}/AllergyListar">Alergias</a>
     <a href="${pageContext.request.contextPath}/IntensityListar">Intensidades</a>
     <a href="${pageContext.request.contextPath}/ProductListar">Produtos</a>
+    <a href="${pageContext.request.contextPath}/IngredientListar">Ingredientes</a>
 
     <hr>    
 </center>
