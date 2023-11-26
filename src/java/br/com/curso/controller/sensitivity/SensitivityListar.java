@@ -25,7 +25,7 @@ public class SensitivityListar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=iso-8859-1");
         try{
@@ -34,7 +34,7 @@ public class SensitivityListar extends HttpServlet {
            request.getRequestDispatcher("/cadastros/sensitivity/list.jsp").forward(request, response);
         } catch(Exception ex){
             //ex.printStackTrace();
-            System.out.println("Problemas no Servlet ao Listar" + " Sensibilidades! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao Listar" + " Sensitivity! Erro: " + ex.getMessage());
             ex.printStackTrace();
         }
     }

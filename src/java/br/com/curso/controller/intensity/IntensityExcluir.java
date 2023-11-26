@@ -34,14 +34,14 @@ public class IntensityExcluir extends HttpServlet {
            
             GenericDAO dao = new IntensityDAO();
             if (dao.excluir(id)) {
-                mensagem = "Intensidade excluída com sucesso!";
+                mensagem = "Intensity excluída com sucesso!";
             } else{
-                mensagem = "Problemas ao excluir Intensidade";
+                mensagem = "Problemas ao excluir Intensity";
             }
             request.setAttribute("mensagem", mensagem);
             response.sendRedirect("IntensityListar");
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao excluir Intensidade! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao excluir Intensity! Erro: " + ex.getMessage());
             ex.printStackTrace();
         }
     }

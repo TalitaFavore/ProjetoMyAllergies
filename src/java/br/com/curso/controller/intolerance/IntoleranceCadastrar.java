@@ -1,7 +1,8 @@
-package br.com.curso.controller.sensitivity;
+package br.com.curso.controller.intolerance;
 
 import br.com.curso.dao.GenericDAO;
-import br.com.curso.dao.SensitivityDAO;
+import br.com.curso.dao.IntoleranceDAO;
+import br.com.curso.model.Intolerance;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Talita
  */
-@WebServlet(name = "SensitivityExcluir", urlPatterns = {"/SensitivityExcluir"})
-public class SensitivityExcluir extends HttpServlet {
+@WebServlet(name = "IntoleranceCadastrar", urlPatterns = {"/IntoleranceCadastrar"})
+public class IntoleranceCadastrar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,21 +29,25 @@ public class SensitivityExcluir extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=iso-8859-1");
+        
         int id = Integer.parseInt(request.getParameter("id"));
+        String nameIntolerance = request.getParameter("nameIntolerance");
         String mensagem = null;
-       try{
-           
-            GenericDAO dao = new SensitivityDAO();
-            if (dao.excluir(id)) {
-                mensagem = "Sensitivity excluída com sucesso!";
+        
+        Intolerance oIntolerance = new Intolerance();
+        oIntolerance.setId(id);
+        oIntolerance.setNameIntolerance(nameIntolerance);
+        try{
+            GenericDAO dao = new IntoleranceDAO();
+            if (dao.cadastrar(oIntolerance)) {
+                mensagem = "Alergia cadastrada com sucesso!";
             } else{
-                mensagem = "Problemas ao excluir Sensitivity";
+                mensagem = "Problemas ao cadastrar Intolerância. Verifique os dados informados e tente novamente!";
             }
             request.setAttribute("mensagem", mensagem);
-            response.sendRedirect("SensitivityListar");
+            response.sendRedirect("IntoleranceListar");
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao excluir Sensitivity! Erro: " + ex.getMessage());
-            ex.printStackTrace();
+            System.out.println("Problemas no Servlet ao cadastrar Intolerância! Erro: " + ex.getMessage());
         }
     }
 

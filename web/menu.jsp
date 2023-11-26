@@ -7,6 +7,7 @@
     <a href="${pageContext.request.contextPath}/ProductListar">Produtos</a>
     <a href="${pageContext.request.contextPath}/IngredientListar">Ingredientes</a>
     <a href="${pageContext.request.contextPath}/SensitivityListar">Sensibilidades</a>
+    <a href="${pageContext.request.contextPath}/IntoleranceListar">Intolerâncias</a>
 
     <hr>    
 </center>

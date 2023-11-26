@@ -1,5 +1,6 @@
 package br.com.curso.controller.intensity;
 
+import br.com.curso.dao.GenericDAO;
 import br.com.curso.dao.IntensityDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -29,11 +30,11 @@ public class IntensityCarregar extends HttpServlet {
         response.setContentType("text/html;charset=iso-8859-1");
         int id = Integer.parseInt(request.getParameter("id"));
         try{
-            IntensityDAO dao = new IntensityDAO();
+            GenericDAO dao = new IntensityDAO();
             request.setAttribute("intensity", dao.carregar(id));
             request.getRequestDispatcher("cadastros/intensity/new.jsp").forward(request, response);
         } catch (Exception e) {
-            System.out.println("Problema na Servlet carregar Intensidade! Erro: " + e.getMessage());
+            System.out.println("Problema na Servlet carregar Intensity! Erro: " + e.getMessage());
             e.printStackTrace();
         }
     }

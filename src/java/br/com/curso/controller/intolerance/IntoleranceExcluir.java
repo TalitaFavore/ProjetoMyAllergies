@@ -1,7 +1,7 @@
-package br.com.curso.controller.sensitivity;
+package br.com.curso.controller.intolerance;
 
 import br.com.curso.dao.GenericDAO;
-import br.com.curso.dao.SensitivityDAO;
+import br.com.curso.dao.IntoleranceDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Talita
  */
-@WebServlet(name = "SensitivityExcluir", urlPatterns = {"/SensitivityExcluir"})
-public class SensitivityExcluir extends HttpServlet {
+@WebServlet(name = "IntoleranceExcluir", urlPatterns = {"/IntoleranceExcluir"})
+public class IntoleranceExcluir extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,16 +32,16 @@ public class SensitivityExcluir extends HttpServlet {
         String mensagem = null;
        try{
            
-            GenericDAO dao = new SensitivityDAO();
+            GenericDAO dao = new IntoleranceDAO();
             if (dao.excluir(id)) {
-                mensagem = "Sensitivity excluída com sucesso!";
+                mensagem = "Intolerância excluída com sucesso!";
             } else{
-                mensagem = "Problemas ao excluir Sensitivity";
+                mensagem = "Problemas ao excluir Intolerância";
             }
             request.setAttribute("mensagem", mensagem);
-            response.sendRedirect("SensitivityListar");
+            response.sendRedirect("IntoleranceListar");
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao excluir Sensitivity! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao excluir Alergia! Erro: " + ex.getMessage());
             ex.printStackTrace();
         }
     }

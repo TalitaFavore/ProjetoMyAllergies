@@ -40,14 +40,14 @@ public class SensitivityCadastrar extends HttpServlet {
         try{
             GenericDAO dao = new SensitivityDAO();
             if (dao.cadastrar(oSensitivity)) {
-                mensagem = "Sensibilidade cadastrada com sucesso!";
+                mensagem = "Sensitivity cadastrada com sucesso!";
             } else{
-                mensagem = "Problemas ao cadastrar Sensibilidade. Verifique os dados informados e tente novamente!";
+                mensagem = "Problemas ao cadastrar Sensitivity. Verifique os dados informados e tente novamente!";
             }
             request.setAttribute("mensagem", mensagem);
             response.sendRedirect("SensitivityListar");
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao cadastrar Sensibilidade! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao cadastrar Sensitivity! Erro: " + ex.getMessage());
         }
     }
 

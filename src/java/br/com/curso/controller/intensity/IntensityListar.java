@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Talita
  */
-@WebServlet(name = "ListarIntensity", urlPatterns = {"/ListarIntensity"})
+@WebServlet(name = "IntensityListar", urlPatterns = {"/IntensityListar"})
 public class IntensityListar extends HttpServlet {
 
     /**
@@ -25,7 +25,7 @@ public class IntensityListar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=iso-8859-1");
         try{
@@ -34,7 +34,7 @@ public class IntensityListar extends HttpServlet {
            request.getRequestDispatcher("/cadastros/intensity/list.jsp").forward(request, response);
         } catch(Exception ex){
             //ex.printStackTrace();
-            System.out.println("Problemas no Servlet ao Listar" + " Intensidades! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao Listar" + " Intensity! Erro: " + ex.getMessage());
             ex.printStackTrace();
         }
     }

@@ -1,7 +1,6 @@
-package br.com.curso.controller.sensitivity;
+package br.com.curso.controller.intolerance;
 
-import br.com.curso.dao.GenericDAO;
-import br.com.curso.dao.SensitivityDAO;
+import br.com.curso.model.Intolerance;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Talita
  */
-@WebServlet(name = "SensitivityExcluir", urlPatterns = {"/SensitivityExcluir"})
-public class SensitivityExcluir extends HttpServlet {
+@WebServlet(name = "IntoleranceNovo", urlPatterns = {"/IntoleranceNovo"})
+public class IntoleranceNovo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,22 +27,9 @@ public class SensitivityExcluir extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=iso-8859-1");
-        int id = Integer.parseInt(request.getParameter("id"));
-        String mensagem = null;
-       try{
-           
-            GenericDAO dao = new SensitivityDAO();
-            if (dao.excluir(id)) {
-                mensagem = "Sensitivity excluída com sucesso!";
-            } else{
-                mensagem = "Problemas ao excluir Sensitivity";
-            }
-            request.setAttribute("mensagem", mensagem);
-            response.sendRedirect("SensitivityListar");
-        } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao excluir Sensitivity! Erro: " + ex.getMessage());
-            ex.printStackTrace();
-        }
+        Intolerance oIntolerance = new Intolerance();
+        request.setAttribute("intolerance", oIntolerance);
+        request.getRequestDispatcher("/cadastros/Intolerance/new.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

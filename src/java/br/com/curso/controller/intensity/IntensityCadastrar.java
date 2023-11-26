@@ -40,14 +40,14 @@ public class IntensityCadastrar extends HttpServlet {
         try{
             GenericDAO dao = new IntensityDAO();
             if (dao.cadastrar(oIntensity)) {
-                mensagem = "Intensidade cadastrada com sucesso!";
+                mensagem = "Intensity cadastrada com sucesso!";
             } else{
-                mensagem = "Problemas ao cadastrar Intensidade. Verifique os dados informados e tente novamente!";
+                mensagem = "Problemas ao cadastrar Intensity. Verifique os dados informados e tente novamente!";
             }
             request.setAttribute("mensagem", mensagem);
             response.sendRedirect("IntensityListar");
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao cadastrar Intensidade! Erro: " + ex.getMessage());
+            System.out.println("Problemas no Servlet ao cadastrar Intensity! Erro: " + ex.getMessage());
         }
     }
 

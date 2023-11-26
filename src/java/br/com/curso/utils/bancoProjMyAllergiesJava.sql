@@ -64,3 +64,15 @@ insert into sensitivity (nameSensitivity) values('Látex');
 insert into sensitivity (nameSensitivity) values('Pistache');
 
 select * from sensitivity;
+
+--
+create table intolerance (
+	id serial primary key,
+	nameIntolerance varchar(30)
+);
+
+insert into intolerance (nameIntolerance) values ('Lactose');
+insert into intolerance (nameIntolerance) values ('Glúten');
+insert into intolerance (nameIntolerance) values ('Sacarose');
+
+select * from intolerance;

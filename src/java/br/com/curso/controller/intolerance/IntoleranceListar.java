@@ -1,7 +1,7 @@
-package br.com.curso.controller.sensitivity;
+package br.com.curso.controller.intolerance;
 
 import br.com.curso.dao.GenericDAO;
-import br.com.curso.dao.SensitivityDAO;
+import br.com.curso.dao.IntoleranceDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Talita
  */
-@WebServlet(name = "SensitivityExcluir", urlPatterns = {"/SensitivityExcluir"})
-public class SensitivityExcluir extends HttpServlet {
+@WebServlet(name = "IntoleranceListar", urlPatterns = {"/IntoleranceListar"})
+public class IntoleranceListar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,20 +28,13 @@ public class SensitivityExcluir extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=iso-8859-1");
-        int id = Integer.parseInt(request.getParameter("id"));
-        String mensagem = null;
-       try{
-           
-            GenericDAO dao = new SensitivityDAO();
-            if (dao.excluir(id)) {
-                mensagem = "Sensitivity excluída com sucesso!";
-            } else{
-                mensagem = "Problemas ao excluir Sensitivity";
-            }
-            request.setAttribute("mensagem", mensagem);
-            response.sendRedirect("SensitivityListar");
+        try{
+           GenericDAO dao = new IntoleranceDAO();
+           request.setAttribute("intolerances", dao.listar());
+           request.getRequestDispatcher("/cadastros/intolerance/list.jsp").forward(request, response);
         } catch(Exception ex){
-            System.out.println("Problemas no Servlet ao excluir Sensitivity! Erro: " + ex.getMessage());
+            //ex.printStackTrace();
+            System.out.println("Problemas no Servlet ao Listar" + " Intolerâncias! Erro: " + ex.getMessage());
             ex.printStackTrace();
         }
     }
