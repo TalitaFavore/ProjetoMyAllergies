@@ -1,5 +1,7 @@
 # MyAllergies
-Project being developed for graduation work, starting with a simple crud 
+Projeto sendo desenvolvido para trabalho de graduação, começando com um CRUD simples.
+
+*Project being developed for graduation work, starting with a simple crud.*
 
 ## Sobre
 Aplicativo para facilitar as compras, garantindo mais praticidade e segurança, que possibilita que o usuário esteja consciente dos ingredientes dos produtos que consome. 
@@ -12,8 +14,11 @@ Nesse sistema, o usuário pode participar também ao cadastrar produtos, informa
 ## Diagrama de Classe
 ![Imagem do Diagrama de Classe](https://github.com/TalitaFavore/ProjetoMyAllergies/blob/main/img-readme/Class%20Diagram.png)
 
-## *Wireframe* da tela principal do projeto 
+## *Wireframe* da tela principal do projeto
+![Imagem do Wireframe da tela principal do projeto](https://github.com/TalitaFavore/ProjetoMyAllergies/blob/main/img-readme/Tela%20Inicial%20Celular.png)
 
 ## Mapeamento do Objeto Relacional (MOR)
+![Imagem do Mapeamento do Objeto Relacional do projeto](https://github.com/TalitaFavore/ProjetoMyAllergies/blob/main/img-readme/MOR.png)
 
 ## Tela de Listagem de Alergias - CRUD com Java Server Pages
+![Imagem da Tela de Listagem de Alergias - CRUD do projeto](https://github.com/TalitaFavore/ProjetoMyAllergies/blob/main/img-readme/Listagem%20Alergias.png)
